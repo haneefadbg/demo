@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<meta charset="UTF-8">
+<script src="library/angular.min.js"></script>
+<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+<title>demo</title>
+
+        <script>
+        var app = angular.module('myApp', []);
+                app.controller('myCtrl', function($scope) {
+                }).directive('myDir', function() {
+                    return {
+                        template: '<H1>Xin chào các bạn.</H1>'
+                    };
+                });
+        </script>
+    </head>
+    <body>
+        <div ng-app="myApp" ng-controller="myCtrl">
+            <div my-dir></div>
+        </div>
+
+
+</body>
+</html>

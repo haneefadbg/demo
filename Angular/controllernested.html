@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="library/angular.min.js"></script>
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+    <title>demo Controller</title>
+</head>
+<body>
+<div ng-controller="parentController">
+        <div ng-controller="child1Controller">
+            Xin chào {{ name }}!
+        </div>
+        <div ng-controller="child2Controller">
+            Xin chào {{ name }}!
+        </div>
+        {{ name }}
+</div>
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('parentController', function ($scope){
+                $scope.name = 'Tuan';
+            }).controller('child1Controller', function ($scope){
+
+            }).controller('child2Controller', function ($scope){
+
+            });
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="library/angular.min.js"></script>
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+    <title>demo</title>
+</head>
+<body>
+<div style="padding-top:100px;">
+</div>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <p class="text-info">Xin chào, tôi là: {{ firstName + " " + lastName }}</p>
+        </div>
+    </div>
+</div>
+<script src="js/myApp.js"></script>
+<script src="js/myCtrl.js"></script>
+</body>
+</html>

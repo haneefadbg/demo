@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<meta charset="UTF-8">
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+<!--<script src="library/angular.min.js"></script>-->
+<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+<title>demo</title>
+<body>
+   <div ng-controller="getSetController">
+        <form name="userForm">
+            <h5>Bạn đang nghĩ gì: </h5>
+            <input type="text" name="status" ng-model-options="{ getterSetter: true }" ng-model="user.status"/><br />
+            <h5>Chuỗi mà Bạn đang nhập là:</h5>
+            <span ng-bind="user.status()"></span>
+        </form>
+   </div>
+   <script language="javascript">
+        angular.module('myApp', [])
+                .controller('getSetController', ['$scope', function($scope) {
+                    var _status = 'Happu';
+                    $scope.user = {
+                        status: function(newStatus) {
+                            return angular.isDefined(newStatus) ? (_status = newStatus) : _status;
+                    }
+                };
+        }]);
+   </script>
+</body>
+</html>

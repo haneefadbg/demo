@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<meta charset="UTF-8">
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+<!--<script src="library/angular.min.js"></script>-->
+<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+<title>demo</title>
+<body>
+
+
+        <div ng-controller="getSetController">
+            <form name="userForm">
+                <h5>Bạn đang nghĩ gì: </h5>
+                <input type="text" name="status" ng-model-options="{updateOn:'blur', debounce:1000}" ng-model="user.status"/><br />
+                <h5>Chuỗi mà Bạn đang nhập là:</h5>
+                <span ng-bind="user.status"></span>
+            </form>
+        </div>
+        <script language="javascript">
+            angular.module('myApp', [])
+                    .controller('getSetController', ['$scope', function($scope) {
+            }]);
+        </script>
+
+
+</body>
+</html>

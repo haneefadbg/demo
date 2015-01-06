@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="" ng-controller="infoController">
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="library/angular.min.js"></script>
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+    <title>demo</title>
+</head>
+<body>
+<div style="padding-top:100px;">
+</div>
+<div class="container">
+    <div class="col-md-6 col-md-offset-3">
+        Tên: <input type="text" ng-model="ten"><br/>
+        Nước: <select ng-model="countryModel">
+                <option ng-repeat="x in country | orderBy: 'name'">{{ x.name }}</option>
+            </select>
+        <p>
+            Tôi tên là {{ ten }}, tôi đến từ {{ countryModel }}.
+        </p>
+        <p> Các nước tôi đã đi qua là: {{ country[3]['name']|lowercase }}, {{ country[4]['name']|uppercase }} và tôi đã tiêu hết {{ money|currency}} </p>
+
+    </div>
+</div>
+
+    <script src="js/infoController.js">
+    </script>
+
+</body>
+</html>

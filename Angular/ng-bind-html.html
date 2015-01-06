@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<meta charset="UTF-8">
+<script src="library/angular.min.js"></script>
+<script src="library/angular-sanitize.min.js"></script>
+<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+<title>demo</title>
+    <script>
+        var app = angular.module('myApp', ['ngSanitize']);
+                app.controller('myCtrl', function($scope) {
+                });
+
+    </script>
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <input type="text" ng-model="textHTML"/>
+        <p ng-bind-html="textHTML"></p>
+    </div>
+</body>
+</html>

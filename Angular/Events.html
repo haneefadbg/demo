@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="" ng-controller="infoController">
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="library/angular.min.js"></script>
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+    <title>demo</title>
+</head>
+<body>
+<div style="padding-top:100px;padding-left: 25%;">
+    <button ng-click="edit()">Edit</button>
+</div>
+<div class="container" ng-hide="myVar">
+    <div class="col-md-6 col-md-offset-3" >
+        Tên: <input type="text" ng-model="ten"><br/>
+        Nước: <select ng-model="countryModel" >
+        <option ng-repeat="x in country">{{ x }}</option>
+    </select>
+        <p>
+            Tôi tên là {{ ten }}, tôi đến từ {{ countryModel }}.
+        </p>
+    </div>
+</div>
+<script>
+    function infoController($scope){
+        $scope.ten = "John",
+        $scope.country = ['Australia','England','VietNam','USA'],
+        $scope.countryModel = 'England',
+        $scope.myVar = true,
+        $scope.edit = function() {
+              $scope.myVar = !$scope.myVar;
+        };
+    };
+</script>
+</body>
+</html>
